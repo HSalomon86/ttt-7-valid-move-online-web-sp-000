@@ -7,12 +7,20 @@ def position_taken?(board, index)
   end
 end
 
+def on_board?(num)
+  if index.between?(0, 8)
+    return true
+  else
+    return false
+  end
+end
+
+
 # re-define your #position_taken? method here, so that you can use it in the #valid_move? method above.
 def valid_move?(board, index)
-  if position_taken?(board, index) || !index.between?(0, 8)
+  if position_taken?(board, index) == flase && on_board?(index) == true
+    return true
+  else
     return false
-  elsif
-    index.between?(0, 8) 
-  return true
   end
 end
